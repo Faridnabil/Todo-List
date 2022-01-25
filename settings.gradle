@@ -1,2 +1,2 @@
-rootProject.name = "Pengingat Tugas"
+rootProject.name='ToDoListApplication'
 include ':app'
