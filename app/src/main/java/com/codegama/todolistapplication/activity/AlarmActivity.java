@@ -28,7 +28,6 @@ public class AlarmActivity extends BaseActivity {
     TextView timeAndData;
     @BindView(R.id.closeButton)
     Button closeButton;
-    MediaPlayer mediaPlayer;
 
     public static AlarmActivity instance() {
         return inst;
@@ -39,9 +38,6 @@ public class AlarmActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
         ButterKnife.bind(this);
-
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.notification);
-        mediaPlayer.start();
 
         if(getIntent().getExtras() != null) {
             title.setText(getIntent().getStringExtra("TITLE"));
@@ -57,6 +53,5 @@ public class AlarmActivity extends BaseActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        mediaPlayer.release();
     }
 }
